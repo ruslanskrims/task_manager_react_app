@@ -1,0 +1,74 @@
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .input {
+    display: none;
+  }
+
+  //   .customCheckbox {
+  //     position: absolute;
+  //     z-index: -1;
+  //     opacity: 0;
+  //   }
+  //   .customCheckbox:checked + label::before {
+  //     background: url("../images/checkboxchecked.svg") center no-repeat;
+  //   }
+  //   .customCheckbox + label::before {
+  //     content: "";
+  //     display: inline-block;
+  //     width: 1.2em;
+  //     height: 1.2em;
+  //     flex-shrink: 0;
+  //     flex-grow: 0;
+  //     border: 1px solid #adb5bd;
+  //     background: url("../images/checkbox.svg") center no-repeat;
+  //   }
+  //   .customCheckbox:not(:disabled):not(:checked) + label:hover::before {
+  //     border-color: #b3d7ff;
+  //   }
+  //   /* стили для активного состояния чекбокса (при нажатии на него) */
+  //   .customCheckbox:not(:disabled):active + label::before {
+  //     background-color: #b3d7ff;
+  //     border-color: #b3d7ff;
+  //   }
+  //   /* стили для чекбокса, находящегося в фокусе */
+  //   .customCheckbox:focus + label::before {
+  //     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  //   }
+  //   /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  //   .customCheckbox:focus:not(:checked) + label::before {
+  //     border-color: #80bdff;
+  //   }
+  //   /* стили для чекбокса, находящегося в состоянии disabled */
+  //   .customCheckbox:disabled + label::before {
+  //     background-color: #e9ecef;
+  //   }
+  .label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 250px;
+    cursor: pointer;
+  }
+  .text {
+    position: absolute;
+    left: 35px;
+    font-weight: 400;
+  }
+  .icon {
+    -left: 10px;
+    width: 45px;
+    height: 45px;
+    transition: ease-in-out 400ms;
+  }
+}
+
+.checkboxActive {
+  background: url("../images/checkboxchecked.svg") 0px center no-repeat;
+}
+.checkboxNotActive {
+  background: url("../images/checkbox.svg") 0px center no-repeat;
+}

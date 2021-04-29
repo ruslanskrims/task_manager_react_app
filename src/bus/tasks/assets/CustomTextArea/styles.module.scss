@@ -1,0 +1,32 @@
+.custom_input {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  label {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    color: #252631;
+    margin-right: 14px;
+  }
+  input {
+    border: none;
+    background: transparent;
+    width: 300px;
+    outline: none;
+    color: #252631;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 10px;
+  }
+}
+.error {
+  color: crimson;
+  border: 2px solid crimson;
+  display: block;
+  width: 300px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}

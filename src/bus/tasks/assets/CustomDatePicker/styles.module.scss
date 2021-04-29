@@ -1,0 +1,21 @@
+.deadline {
+    margin-bottom: 34px;
+    .label {
+        display: block;
+        font-size: 14px;
+        color: black;
+        margin-bottom: 5px;
+    }
+    .date {
+        display: flex;
+        align-items: center;
+        input {
+          cursor: pointer;
+          font-size: 12px;
+          font-weight: 600;
+          color: black;
+          border: none;
+          outline: none;
+        }
+      }
+}

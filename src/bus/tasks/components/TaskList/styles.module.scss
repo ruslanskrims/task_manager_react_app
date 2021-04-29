@@ -1,0 +1,26 @@
+.taskList {
+  background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.full {
+  flex-basis: 100%;
+}
+.normal {
+  flex-basis: 50%;
+}
+
+.empty {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+.empty__title {
+  font-size: 20px;
+  align-self: center;
+}
+.empty__description {
+  align-self: center;
+}

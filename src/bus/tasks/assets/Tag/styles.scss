@@ -1,0 +1,102 @@
+$linkcolour: rgb(53, 18, 18);
+$sketchcolour: #fffaf0;
+$spotifycolour: #f0ffe7;
+$dribblecolour: #ffe7f1;
+$behancecolour: #e7edfd;
+$uxcolour: #e3effc;
+
+.tags {
+  margin-top: 20px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .tag {
+    opacity: 0.7;
+    margin-right: 9px;
+    transition: all 200ms;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.selected {
+      opacity: 1;
+
+      &:hover {
+        cursor: initial;
+        transform: initial;
+      }
+    }
+  }
+}
+.tag {
+  opacity: 0.7;
+  margin-left: 10px;
+  display: inline-flex;
+  justify-content: center;
+  min-width: 82px;
+  font-size: 14px;
+  padding-top: 9px;
+  padding-bottom: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 200ms;
+  &:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  &.selected {
+    opacity: 1;
+    font-weight: 700;
+    &:hover {
+      cursor: initial;
+      transform: initial;
+    }
+  }
+  &.Sketch {
+    color: #ffab2b;
+    background-color: #fffaf0;
+    &:hover {
+      background-color: darken($sketchcolour, 10%);
+    }
+  }
+
+  &.Spotify {
+    color: #6dd230;
+    background-color: #f0ffe7;
+    &:hover {
+      background-color: darken($spotifycolour, 10%);
+    }
+  }
+
+  &.Dribble {
+    color: #fe4d97;
+    background-color: #ffe7f1;
+    &:hover {
+      background-color: darken($dribblecolour, 10%);
+    }
+  }
+
+  &.Behance {
+    color: #4d7cfe;
+    background-color: #e7edfd;
+    &:hover {
+      background-color: darken($behancecolour, 10%);
+    }
+  }
+
+  &.UX {
+    color: #778ca2;
+    background-color: #e3effc;
+    &:hover {
+      background-color: darken($uxcolour, 10%);
+    }
+  }
+}

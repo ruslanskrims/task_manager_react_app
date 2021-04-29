@@ -1,0 +1,39 @@
+.task {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  margin: 0px 30px;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #e8ecef;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  &:first-child {
+    margin-top: 10px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  p {
+    margin-left: auto;
+  }
+  &__title {
+    display: grid;
+    grid-template-columns: 30px 120px auto;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__title p {
+    font-size: 16px;
+    color: #464646;
+  }
+  &__calendar {
+    font-size: 20px;
+    fill: rgb(194, 182, 182);
+  }
+}
+.task__active {
+  background-color: #e8ecee;
+}
