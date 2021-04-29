@@ -8,7 +8,7 @@
 В этом проекте нужно реализовать продвинутый Task Manager.
 ```
 
-![alt text](https://raw.githubusercontent.com/RusKrim/task_manager_app/main/src/bus/tasks/assets/images/04-Description.png "Task Manager Mockup")
+![alt text](https://raw.githubusercontent.com/RusKrim/task_manager_app/main/src/images/project_overview.png "Task Manager Mockup")
 
 **Список функций которые реализовывать нужно обязательно**
 
