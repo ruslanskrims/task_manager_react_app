@@ -3,7 +3,7 @@ import cx from "classnames";
 import styles from "./styles.scss";
 import { availableTags } from "../../availableTags";
 
-export const Tag = ({ selected, type, cb , name}) => {
+export const Tag = ({ selected, type, cb, name, tagCx}) => {
   let chosenTagType;
   switch (type) {
     case availableTags[0]: {
@@ -34,18 +34,15 @@ export const Tag = ({ selected, type, cb , name}) => {
   }
 
   const tagCn = cx("tag", chosenTagType, { 
-    selected: selected ? selected : name === chosenTagType
+    selected: name === chosenTagType || selected 
   });
   const tagClick = () => {
     if (typeof cb === "function") {
       cb(type);
     }
   };
-
-  console.log(selected);
-
   return (
-    <span onClick={tagClick} className={tagCn}>
+    <span onClick={tagClick} className={tagCx || tagCn}>
       {type}
     </span>
   );

@@ -1,0 +1,109 @@
+.example-enter{
+    opacity: 0.01;
+}
+.example-enter-active{
+    opacity: 1;
+    transition: opacity 1100ms ease-in;
+}
+.example-enter-done{
+    opacity: 1;
+}
+/* 
+will run on any item being removed
+*/
+.example-exit{
+    opacity: 1;
+    color: white;
+}
+.example-exit-active{
+    opacity: 0.01;
+    transition: opacity 1100ms ease-in 300ms;
+    color: white;
+}
+.example-exit-done{
+    opacity: 0;
+}
+/* 
+set to false by default.
+will run on initial mount only
+*/
+.example-appear{
+    opacity: 0.01;
+}
+.example-appear-active{
+    opacity: 1;
+    transition: opacity 1100ms ease-in;
+}
+.example-appear-done{
+    /* doesn't exist  use -enter-done */
+}
+
+
+.hhh-appear{
+/*
+    color: red;
+    transition: color 1000ms linear;
+*/
+}
+.hhh-appear-active{
+    transition: color 1100ms linear;
+}
+.hhh-enter-done{
+    transition: color 1100ms linear;
+}
+
+.tags {
+    opacity: 0.7;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: center;
+    min-width: 82px;
+    font-size: 14px;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 200ms;
+    &.Sketch {
+      color: #ffab2b;
+      background-color: #fffaf0;
+      &:hover {
+        background-color: darken($sketchcolour, 10%);
+      }
+    }
+    &.Spotify {
+      color: #6dd230;
+      background-color: #f0ffe7;
+      &:hover {
+        background-color: darken($spotifycolour, 10%);
+      }
+    }
+  
+    &.Dribble {
+      color: #fe4d97;
+      background-color: #ffe7f1;
+      &:hover {
+        background-color: darken($dribblecolour, 10%);
+      }
+    }
+  
+    &.Behance {
+      color: #4d7cfe;
+      background-color: #e7edfd;
+      &:hover {
+        background-color: darken($behancecolour, 10%);
+      }
+    }
+  
+    &.UX {
+      color: #778ca2;
+      background-color: #e3effc;
+      &:hover {
+        background-color: darken($uxcolour, 10%);
+      }
+    }
+  }
+
+
+  

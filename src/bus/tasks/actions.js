@@ -18,9 +18,9 @@ export const taskActions = Object.freeze({
     return {
       type: types.TASK_CREATE_NEW,
       payload,
-    }
+    };
   },
-  toggleForm: (payload) => {
+  toggleForm: () => {
     return {
       type: types.TASK_TOGGLE_FORM,
     };
@@ -42,13 +42,10 @@ export const taskActions = Object.freeze({
       type: types.TASK_STOP_FETCHING,
     };
   },
-
-  //Async
   fetchAsync: () => async (dispatch) => {
     dispatch({
       type: types.TASK_FETCH_ASYNC,
     });
-
     dispatch(taskActions.startFetching());
 
     try {
@@ -60,38 +57,97 @@ export const taskActions = Object.freeze({
     } catch (error) {
       dispatch(taskActions.setFetchingError(error));
     }
-
     dispatch(taskActions.stopFetching());
   },
-
-  //Tasks
-
   createTask: (payload) => async (dispatch) => {
     dispatch({
       type: types.TASK_CREATE,
       payload,
     });
     const response = await api.todo.create(payload);
-    console.log(response)
     if (response.status === 201) {
-        dispatch(taskActions.fetchAsync());
+      dispatch(taskActions.fetchAsync());
     } else {
-      const error = {
-        status: response.status,
-      };
       dispatch(taskActions.setFetchingError(error));
     }
   },
   getTaskById: (id) => async (dispatch) => {
     try {
-    const response = await api.todo.getTaskId(id);
+      const response = await api.todo.getTaskId(id);
       if (response.status === 200) {
         const result = await response.json();
-        console.log(result)
         dispatch(taskActions.fillSelectedTask(result));
       }
     } catch (error) {
-      console.log(error.message)
+      dispatch(taskActions.setFetchingError(error));
     }
-  }
+  },
+  deleteTask: (id) => async (dispatch) => {
+    dispatch({
+      type: types.TASK_DELETE,
+      id,
+    });
+    try {
+      const response = await api.todo.delete(id);
+      if (response.status === 204) {
+        dispatch(taskActions.startNewTask([]));
+        dispatch(taskActions.fetchAsync());
+      }
+    } catch (error) {
+      dispatch(taskActions.setFetchingError(error));
+    }
+    dispatch(taskActions.stopFetching());
+  },
+  updateTask: (payload) => async (dispatch) => {
+    try {
+      dispatch({
+        type: types.TASK_UPDATE,
+        payload,
+      });
+      let chosenTagType;
+      switch (payload.tag.name || payload.tag) {
+        case `Sketch`: {
+          chosenTagType = `8b535acc-623b-4ee3-9279-e6175159ff47`;
+          break;
+        }
+        case `Spotify`: {
+          chosenTagType = `e04358c2-4afc-4577-8ff6-9e8ddd4f406a`;
+          break;
+        }
+        case `Dribble`: {
+          chosenTagType = `dd63b60d-864b-400e-b03b-f5eb6d8ffa93`;
+          break;
+        }
+
+        case `Behance`: {
+          chosenTagType = `482a32f9-2b33-4d3f-af65-bb2f886d3ee9`;
+          break;
+        }
+
+        case `UX`: {
+          chosenTagType = `3a423b8a-d946-4c0b-8195-33f320bd5470`;
+          break;
+        }
+        default: {
+          throw new Error("There is no such type!");
+        }
+      }
+
+      const response = await api.todo.update(payload.id, {
+        title: payload.title,
+        description: payload.description,
+        completed: payload.completed,
+        tag: chosenTagType,
+        deadline: payload.deadline,
+      });
+
+      if (response.status === 200) {
+        dispatch(taskActions.startNewTask([]));
+        dispatch(taskActions.fetchAsync());
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    dispatch(taskActions.stopFetching());
+  },
 });

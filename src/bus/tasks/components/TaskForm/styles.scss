@@ -1,0 +1,19 @@
+.taskform-enter {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.taskform-enter-active {
+    opacity: 0.8;
+    transform: translateX(0px);
+    transition: all 500ms;
+}
+.taskform-exit {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.taskform-exit-active {
+    opacity: 0;
+    transition: all 500ms;
+}

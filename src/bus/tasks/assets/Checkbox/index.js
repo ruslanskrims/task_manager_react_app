@@ -17,9 +17,9 @@ export const Checkbox = ({
   });
 
   return (
-    <div className={classes} onClick={onClick}>
+    <div className={classes}>
       <input {...props} className={styles.input} type="checkbox" />
-      <label htmlFor={props.id} className={styles.label}>
+      <label htmlFor={props.id} className={styles.label} onClick={onClick}>
         <span className={checkboxCn}></span>
         {label && <div className={styles.text}>{label}</div>}
       </label>

@@ -37,7 +37,7 @@ export const api = Object.freeze({
       });
     },
     update: (id, payload) => {
-      return fetch(`${root}/todos/${id}`, {
+      return fetch(`${root}/v2/todos/tasks/${id}`, {
         method: "PUT",
         headers: {
          "Authorization": `Bearer ${bearerToken}`,

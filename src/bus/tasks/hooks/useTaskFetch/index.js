@@ -10,7 +10,7 @@ export const useTaskFetch = () => {
 
   useEffect(() => {
     dispatch(taskActions.fetchAsync());
-  }, [dispatch]);
+  }, []);
 
   return {
     dataArray,

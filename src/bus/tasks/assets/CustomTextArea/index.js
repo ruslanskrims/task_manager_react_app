@@ -11,7 +11,7 @@ export const CustomTextArea = ({ label, ...props }) => {
     <>
       <div className={styles.custom_input}>
         <label htmlFor={props.id || props.name}>{label}</label>
-        <textarea {...field} {...props} />
+        <textarea {...field} {...props} rows="3" cols="50" />
         {meta.touched && meta.error && (
           <span className={styles.error}>{meta.error}</span>
         )}

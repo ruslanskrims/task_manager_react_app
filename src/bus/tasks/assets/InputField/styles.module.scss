@@ -3,11 +3,10 @@
   display: flex;
   flex-direction: column;
   label {
-    display: inline-block;
     font-weight: 400;
     font-size: 16px;
     color: #252631;
-    margin-right: 14px;
+    padding-left: 10px;
   }
   input {
     border: none;
@@ -23,7 +22,6 @@
 }
 .error {
   color: crimson;
-  border: 2px solid crimson;
   display: block;
   width: 300px;
   padding: 5px;

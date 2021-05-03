@@ -2,6 +2,7 @@
   background-color: rgb(255, 255, 255);
   position: relative;
   padding-top: 10px;
+  padding-left: 10px;
   display: block;
   height: 100%;
   .complete {
@@ -15,11 +16,8 @@
       color: #778ca2;
       text-transform: uppercase;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 400;
     }
-  }
-  .formInputs {
-    margin-left: 27px;
   }
 }
 .editorClosed {
@@ -29,7 +27,7 @@
   display: block;
   background-color: rgb(255, 255, 255);
   position: relative;
-  flex-basis: 50%;
+  flex-basis: 49%;
   padding-top: 10px;
   height: 100%;
   .complete {
@@ -47,9 +45,6 @@
       font-weight: 500;
     }
   }
-  .formInputs {
-    margin-left: 27px;
-  }
 }
 
 .buttonComplete {
@@ -64,21 +59,23 @@
   margin-left: 26px;
 }
 
-.tags {
-  background-color: black;
-}
-
 .button {
   padding: 5px 10px;
+  min-width: 100px;
   outline: none;
   border: none;
-  background-color: rgb(3, 179, 56);
+  background-color: rgba(75, 201, 233, 0.822);
   color: #fff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.7;
   border-radius: 5px;
   cursor: pointer;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.error__message {
+  padding-left: 10px;
+  color: crimson;
 }

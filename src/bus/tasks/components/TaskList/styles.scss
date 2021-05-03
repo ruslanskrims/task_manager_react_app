@@ -1,0 +1,57 @@
+.example-enter{
+    opacity: 0.01;
+    transform: translateY(0px);
+}
+.example-enter-active{
+    opacity: 1;
+    transform: translateY(-1px);
+    transition: all linear 300ms;
+
+}
+.example-enter-done{
+    opacity: 1;
+}
+
+.example-exit{
+    opacity: 1;
+    color: white;
+}
+.example-exit-active{
+    opacity: 0.01;
+    transition: opacity 300ms ease-in 300ms;
+    color: white;
+}
+.example-exit-done {
+    opacity: 0;
+}
+/* 
+set to false by default.
+will run on initial mount only
+*/
+.example-appear{
+    opacity: 0.01;
+}
+.example-appear-active{
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.tasklist-enter {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.tasklist-enter-active {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 500ms;
+}
+.tasklist-exit {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.tasklist-exit-active {
+    opacity: 1;
+    transition: all 500ms;
+}

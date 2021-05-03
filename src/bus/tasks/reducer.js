@@ -12,11 +12,16 @@ const initialState = {
 export const tasksReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case types.TASK_SELECT:
-      return {...state, selectedTask: state.isFormOpenned ? payload.data : []};
-      case types.TASK_CREATE_NEW:
-      return {...state, selectedTask: payload};
+      return {
+        ...state,
+        selectedTask: state.isFormOpenned ? payload.data : [],
+      };
+    case types.TASK_UPDATE:
+      return { ...state, selectedTask: payload };
+    case types.TASK_CREATE_NEW:
+      return { ...state, selectedTask: payload };
     case types.TASK_TOGGLE_FORM:
-      return {...state, isFormOpenned: !state.isFormOpenned};
+      return { ...state, isFormOpenned: !state.isFormOpenned };
     case types.TASK_START_FETCHING:
       return { ...state, isFetching: true };
     case types.TASK_STOP_FETCHING:

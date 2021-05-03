@@ -7,6 +7,7 @@ module.exports = {
     hot: true,
     open: true,
   },
+  target: "web",
   devtool: "cheap-module-source-map",
   plugins: [
     new ReactRefreshWebpackPlugin(),

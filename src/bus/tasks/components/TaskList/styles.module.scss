@@ -3,13 +3,21 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .full {
   flex-basis: 100%;
 }
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
 .normal {
-  flex-basis: 50%;
+  flex-basis: 49%;
 }
 
 .empty {
@@ -20,7 +28,25 @@
 .empty__title {
   font-size: 20px;
   align-self: center;
+  padding-top: 10px;
 }
 .empty__description {
+  padding: 10px 25px;
   align-self: center;
+}
+
+.spinner {
+  align-self: center;
+  justify-self: center;
+}
+
+.taskList::-webkit-scrollbar {
+  width: 5px;
+}
+.taskList::-webkit-scrollbar-track {
+  background: rgb(235, 233, 233);
+}
+.taskList::-webkit-scrollbar-thumb {
+  background-color: #98d5f3;
+  border-radius: 20px;
 }

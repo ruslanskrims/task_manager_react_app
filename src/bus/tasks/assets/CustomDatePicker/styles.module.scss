@@ -1,21 +1,25 @@
 .deadline {
-    margin-bottom: 34px;
-    .label {
-        display: block;
-        font-size: 14px;
-        color: black;
-        margin-bottom: 5px;
+  margin-bottom: 24px;
+  .label {
+    display: block;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+  .date {
+    display: flex;
+    input {
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: black;
+      border: none;
+      outline: none;
     }
-    .date {
-        display: flex;
-        align-items: center;
-        input {
-          cursor: pointer;
-          font-size: 12px;
-          font-weight: 600;
-          color: black;
-          border: none;
-          outline: none;
-        }
-      }
+  }
+}
+.error {
+  padding-left: 10px;
+  color: crimson;
 }
