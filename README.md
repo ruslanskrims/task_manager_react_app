@@ -32,3 +32,6 @@
 - Отправлять данные на API Server
 - Приложение должно быть PixelPerfect
 ```
+Для запуска приложения:
+- npm install
+- npm start
